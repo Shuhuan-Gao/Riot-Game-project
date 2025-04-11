@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Riot Games - Job Application</title>
-  <!-- 如果你有自己的 CSS，请替换 style.css -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -19,7 +18,7 @@
         <li><a href="jobs.html">Jobs</a></li>
         <li><a href="apply.html">Job Application</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="mailto:contact@riotgames.com">Email Us</a></li>
+        <li><a href="mailto:krex1179@gmail.com">Email Us</a></li>
       </ul>
     </nav>
   </header>
@@ -27,235 +26,122 @@
   <main>
     <section class="application-form">
       <h2>Apply for a Position</h2>
-      <!--
-        所有必填字段均添加 required 属性；
-        一些字段还使用了 pattern 和 title 来进行 HTML5 验证提示；
-        “Other Skills” 文本域不需要 required。
-      -->
-      <form action="formtest.php" method="post" novalidate>
-        
-        <!-- 1. Job reference number (下拉选择) -->
+      <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+        <!-- Job Information -->
         <div class="form-group">
-          <label for="jobref">Job Reference Number:</label>
-          <select id="jobref" name="jobref" required>
-            <option value="">Select a reference</option>
-            <option value="REF001">REF001</option>
-            <option value="REF002">REF002</option>
-            <option value="REF003">REF003</option>
-            <!-- 如有更多可在此添加 -->
+          <label for="job-ref">Job Reference Number:</label>
+          <select id="job-ref" name="job-ref" required>
+            <option value="">Select Reference</option>
+            <option value="G001">G001 - Game Dev</option>
+            <option value="U002">U002 - UX Designer</option>
+            <option value="Q003">Q003 - QA Tester</option>
           </select>
         </div>
 
-        <!-- 2. First name (最多20字母字符) -->
-        <div class="form-group">
-          <label for="firstname">First Name:</label>
-          <input 
-            type="text" 
-            id="firstname" 
-            name="firstname" 
-            maxlength="20" 
-            pattern="[A-Za-z]{1,20}" 
-            required 
-            title="Please enter up to 20 alphabetical characters."
-          >
+        <!-- Personal Information -->
+        <div class="form-section">
+          <h3>Personal Information</h3>
+          <div class="form-group">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required maxlength="20" pattern="[A-Za-z]{1,20}" />
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required maxlength="20" pattern="[A-Za-z]{1,20}" />
+          </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy" required pattern="\\d{2}/\\d{2}/\\d{4}" />
+          </div>
+          <div class="form-group">
+            <fieldset>
+              <legend>Gender</legend>
+              <div class="radio-group">
+                <label><input type="radio" name="gender" value="male" required> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+                <label><input type="radio" name="gender" value="other"> Other</label>
+              </div>
+            </fieldset>
+          </div>
         </div>
 
-        <!-- 3. Last name (最多20字母字符) -->
-        <div class="form-group">
-          <label for="lastname">Last Name:</label>
-          <input 
-            type="text" 
-            id="lastname" 
-            name="lastname" 
-            maxlength="20" 
-            pattern="[A-Za-z]{1,20}" 
-            required 
-            title="Please enter up to 20 alphabetical characters."
-          >
+        <!-- Contact Information -->
+        <div class="form-section">
+          <h3>Contact Information</h3>
+          <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required pattern="\\d{8,12}" placeholder="8-12 digits" />
+          </div>
         </div>
 
-        <!-- 4. Date of birth (dd/mm/yyyy) -->
-        <div class="form-group">
-          <label for="dob">Date of Birth (dd/mm/yyyy):</label>
-          <input 
-            type="text" 
-            id="dob" 
-            name="dob" 
-            pattern="\d{2}/\d{2}/\d{4}" 
-            required 
-            placeholder="dd/mm/yyyy"
-            title="Please enter a valid date in the format dd/mm/yyyy."
-          >
+        <!-- Address Information -->
+        <div class="form-section">
+          <h3>Address Information</h3>
+          <div class="form-group">
+            <label for="address">Street Address:</label>
+            <input type="text" id="address" name="address" required maxlength="40"/>
+          </div>
+          <div class="form-group">
+            <label for="suburb">Suburb/Town:</label>
+            <input type="text" id="suburb" name="suburb" required maxlength="40"/>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="state">State:</label>
+              <select id="state" name="state" required>
+                <option value="">Select State</option>
+                <option value="VIC">VIC</option>
+                <option value="NSW">NSW</option>
+                <option value="QLD">QLD</option>
+                <option value="NT">NT</option>
+                <option value="WA">WA</option>
+                <option value="SA">SA</option>
+                <option value="TAS">TAS</option>
+                <option value="ACT">ACT</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="postcode">Postcode:</label>
+              <input type="text" id="postcode" name="postcode" pattern="\\d{4}" maxlength="4" required />
+            </div>
+          </div>
         </div>
 
-        <!-- 5. Gender (Radio 按钮，使用 fieldset 分组) -->
-        <fieldset class="form-group">
-          <legend>Gender:</legend>
-          <input 
-            type="radio" 
-            id="male" 
-            name="gender" 
-            value="male" 
-            required
-          >
-          <label for="male">Male</label>
-
-          <input 
-            type="radio" 
-            id="female" 
-            name="gender" 
-            value="female"
-          >
-          <label for="female">Female</label>
-
-          <input 
-            type="radio" 
-            id="other" 
-            name="gender" 
-            value="other"
-          >
-          <label for="other">Other</label>
-        </fieldset>
-
-        <!-- 6. Street address (最多40字符) -->
-        <div class="form-group">
-          <label for="street">Street Address:</label>
-          <input 
-            type="text" 
-            id="street" 
-            name="street" 
-            maxlength="40" 
-            required
-          >
+        <!-- Skills Information -->
+        <div class="form-section">
+          <h3>Skills Information</h3>
+          <div class="form-group">
+            <fieldset>
+              <legend>Required Technical Skills:</legend>
+              <div class="checkbox-group">
+                <label><input type="checkbox" name="skills" value="html" required> HTML</label>
+                <label><input type="checkbox" name="skills" value="css"> CSS</label>
+                <label><input type="checkbox" name="skills" value="js"> JavaScript</label>
+                <label><input type="checkbox" name="skills" value="php"> PHP</label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="form-group">
+            <label for="other-skills">Other Skills:</label>
+            <textarea id="other-skills" name="other-skills" rows="3"></textarea>
+          </div>
         </div>
 
-        <!-- 7. Suburb/Town (最多40字符) -->
-        <div class="form-group">
-          <label for="suburb">Suburb/Town:</label>
-          <input 
-            type="text" 
-            id="suburb" 
-            name="suburb" 
-            maxlength="40" 
-            required
-          >
+        <!-- Submit Button -->
+        <div class="form-group submit-group">
+          <button type="submit">Apply</button>
         </div>
-
-        <!-- 8. State (下拉列表) -->
-        <div class="form-group">
-          <label for="state">State:</label>
-          <select id="state" name="state" required>
-            <option value="">Select state</option>
-            <option value="VIC">VIC</option>
-            <option value="NSW">NSW</option>
-            <option value="QLD">QLD</option>
-            <option value="NT">NT</option>
-            <option value="WA">WA</option>
-            <option value="SA">SA</option>
-            <option value="TAS">TAS</option>
-            <option value="ACT">ACT</option>
-          </select>
-        </div>
-
-        <!-- 9. Postcode (正好4位数字) -->
-        <div class="form-group">
-          <label for="postcode">Postcode:</label>
-          <input 
-            type="text" 
-            id="postcode" 
-            name="postcode" 
-            pattern="\d{4}" 
-            maxlength="4" 
-            required
-            title="Please enter a 4-digit postcode."
-          >
-        </div>
-
-        <!-- 10. Email address (HTML5验证或正则) -->
-        <div class="form-group">
-          <label for="email">Email Address:</label>
-          <input 
-            type="email" 
-            id="email" 
-            name="email" 
-            required
-            title="Please enter a valid email address."
-          >
-        </div>
-
-        <!-- 11. Phone number (8~12位数字或空格) -->
-        <div class="form-group">
-          <label for="phone">Phone Number:</label>
-          <input 
-            type="tel" 
-            id="phone" 
-            name="phone" 
-            pattern="[0-9 ]{8,12}" 
-            required
-            title="Please enter 8 to 12 digits (spaces allowed)."
-          >
-        </div>
-
-        <!-- 12. Required technical skills (3个复选框) -->
-        <fieldset class="form-group">
-          <legend>Required Technical Skills:</legend>
-          <!-- 如果所有都加 required，则必须全部勾选才可提交；
-               若只需“至少勾选一项”，则需要JS或服务器端验证。 
-               此处根据“required或有默认值”要求，每个都加 required 演示。-->
-          <label for="skill_html">
-            <input 
-              type="checkbox" 
-              id="skill_html" 
-              name="tech_skills[]" 
-              value="HTML" 
-              required
-            >
-            HTML
-          </label>
-          <label for="skill_css">
-            <input 
-              type="checkbox" 
-              id="skill_css" 
-              name="tech_skills[]" 
-              value="CSS" 
-              required
-            >
-            CSS
-          </label>
-          <label for="skill_js">
-            <input 
-              type="checkbox" 
-              id="skill_js" 
-              name="tech_skills[]" 
-              value="JavaScript" 
-              required
-            >
-            JavaScript
-          </label>
-        </fieldset>
-
-        <!-- 13. Other Skills (textarea) 非必填 -->
-        <div class="form-group">
-          <label for="otherskills">Other Skills:</label>
-          <textarea id="otherskills" name="otherskills" rows="4" cols="50"></textarea>
-        </div>
-
-        <!-- 同样可以保留“Terms & Conditions” 复选框 -->
-        <div class="form-group">
-          <label>
-            <input type="checkbox" name="terms" required> I agree to the terms and conditions.
-          </label>
-        </div>
-
-        <!-- 14. Submit按钮 名称"Apply" -->
-        <button type="submit">Apply</button>
       </form>
     </section>
   </main>
 
   <footer>
-    <p>Check our <a href="https://jira.example.com/project" target="_blank">Jira Project</a></p>
-    <!-- GitHub Live: https://yourgithubusername.github.io/riot-games-website/ -->
+    <p>Check our <a href="https://shuhuangao.atlassian.net/jira/people/team/8a26df5c-31e6-4ba0-881b-64294f98bbee" target="_blank">Jira Project</a></p>
+    <!-- GitHub Live: https://github.com/Shuhuan-Gao/Riot-Game-project/ -->
   </footer>
 </body>
 </html>
